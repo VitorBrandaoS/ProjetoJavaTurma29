@@ -6,10 +6,12 @@ public class Principal {
 	Scanner teclado = new Scanner(System.in);
 	int v;
 	private String nome;
+	private double salario;
 	
-	public Principal(String nome) {
+	public Principal(String nome, double salario) {
 		super();
 		this.nome = nome;
+		this.salario = salario;
 	}
 
 	public String getNome() {
@@ -18,6 +20,14 @@ public class Principal {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
 	}
 
 	public Scanner getTeclado() {
@@ -28,10 +38,12 @@ public class Principal {
 		this.teclado = teclado;
 	}
 	
-	public void cadastroNome() {
+	public void cadastro() {
 		System.out.println("\n\t---Projeto GNB---");
 		System.out.println("Digite seu nome: ");
 		nome = teclado.nextLine();
+		System.out.println("Digite seu salário: R$");
+		salario = teclado.nextDouble();
 	}
 	
 	public void menu() {
