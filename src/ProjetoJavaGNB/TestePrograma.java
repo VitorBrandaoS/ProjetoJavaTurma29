@@ -3,9 +3,10 @@ package ProjetoJavaGNB;
 public class TestePrograma {
 
 	public static void main(String[] args) {
-		//
-		String nome;
 		
+		Principal pessoa = new Principal("");
+		pessoa.cadastroNome();
+		pessoa.menu();
 	}
 
 }
