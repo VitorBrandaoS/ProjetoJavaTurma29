@@ -51,6 +51,7 @@ public class Principal {
 				break;
 			case 3:
 				
+				
 				break;
 			default:
 				if(v != 0) {
