@@ -1,22 +1,27 @@
 package ProjetoJavaGNB;
 
+import java.util.Scanner;
+
 public class Teste {
 
 	public static void main(String[] args) {
 
 		//Teste do menu
+		Scanner leia = new Scanner(System.in);
+		String resposta;
 		System.out.println("Bem-vindo!");
-		System.out.println("\nDe agora em diante você vai ter nossa ajuda para cuidar das suas finanças!");
+		System.out.println("\nDe agora em diante você vai ter nossa ajuda para 			cuidar das suas finanças!");
 		System.out.println("Por favor, selecione uma opção no menu: ");
 		System.out.println("\n1 para quitar dívidas");
 		System.out.println("2 para aprender a organizar suas finanças");
 		System.out.println("3 para juntar dinheiro");
 		System.out.println("0 para encerrar o programa");
-		
+		int escolha = leia.nextInt();
 		//fazendo as opções do usuário
 		
 		//aqui vai ser necessário adicionar uma leitura de opção
 		//opção = escolha (do usuário de acordo com menu)
+		while (escolha >0 && escolha <=3)
 		switch(escolha) //escolha entre 0,1,2 e 3
 		{
 		case 1:
@@ -24,20 +29,29 @@ public class Teste {
 			//aqui fica a parte da branch dividas
 			
 			System.out.println("Por favor, informe o valor de sua dívida");
-			//ler o valor da dívida
+			double div=leia.nextDouble();
 			System.out.println("Por favor, informe seu salário");
-			//ler salário
-			System.out.println("Por favor, informe quanto (em %) você pode direcionar por mês para isto:");
-			//ler % do salário
+			double sal=leia.nextDouble();
+			System.out.println("Por favor, informe quanto você pode direcionar por mês para isto:");
+			double por =leia.nextDouble();
+			double porl=sal *(30/100);
 			//caso ultrapasse 30% do salário:
-			System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
-			//ler resposta
-			if(resposta==não)
+			if (porl<por)
 			{
+				do
+				{
+			System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
+			resposta=leia.next();
+				}
+				while(resposta!="sim");
+				do
+				{
 				System.out.println("Por favor, digite outra quantidade de seu salário direcionada para quitar a dívida");
-				//ler nova quantidade
+				por =leia.nextDouble();
+				}
+				while(porl<=por);
+			
 			}
-
 			//aqui pode ter uma opção que compara o valor da dívida com o quanto o usuário pode direcionar e estimar o prazo.
 			
 			System.out.println("Você estará direcionando esta quantidade por mês e quitará sua dívida em tantos meses!");
