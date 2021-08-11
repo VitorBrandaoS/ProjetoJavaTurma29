@@ -34,7 +34,7 @@ public class Dividas {
 			do
 			{
 		System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
-		 resposta=leia.next();
+		 resposta=leia.nextLine();
 			}
 			while(resposta!="sim");
 			do
