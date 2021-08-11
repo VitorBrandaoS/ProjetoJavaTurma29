@@ -2,7 +2,7 @@ package ProjetoJavaGNB;
 
 import java.util.Scanner;
 
-public class juntarDinheiro {
+public class juntarDinheiro{
 	
 	public static void main(String[] args) {
 
@@ -24,7 +24,7 @@ public class juntarDinheiro {
 
         int opcao = menu.nextInt();
 
-        if (opcao >6 ||opcao ==0){
+        if (opcao >6 || opcao ==0){
             System.out.print("\n\t\tVOLTE OUTRO DIA SE QUISER POUPAR!");
             menu.close(); 
             break;
