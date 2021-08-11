@@ -14,41 +14,41 @@ public class Dividas {
 	}
 	Scanner leia = new Scanner(System.in);
 	String resposta;
-	public double getValorDiv() {
+	
+	public void getValorDiv() {
 		System.out.println("Por favor, informe o valor de sua dívida");
-		valorDiv=leia.nextDouble();
-		
-		return valorDiv;
+		valorDiv=leia.nextDouble();		
 	}
+	
 	public void setValorDiv(double valorDiv) {
 		this.valorDiv = valorDiv;
 	}
-	public double getSal() {
+	
+	public void getSal() {
+		getValorDiv();
 		System.out.println("Por favor, informe seu salário");
-		sal=leia.nextDouble();
+		double sala=leia.nextDouble();
 		System.out.println("Por favor, informe quanto você pode direcionar por mês para isto:");
 		double por =leia.nextDouble();
-		double porl=sal *(30/100);
-		if (porl<por)
-		{
-			do
-			{
-		System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
-		 resposta=leia.nextLine();
-			}
-			while(resposta!="sim");
-			do
-			{
-			System.out.println("Por favor, digite outra quantidade de seu salário direcionada para quitar a dívida");
-			por =leia.nextDouble();
-			}
-			while(porl<=por);
+		double porl = sala * 0.3;
+		if (por>porl)
+		{	
+			int resp;
+					
+			System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
+			resp = leia.nextInt();			
 			
-			
+			if(resposta == "não") {				
+				System.out.println("Por favor, digite outra quantidade de seu salário direcionada para quitar a dívida");
+				por =leia.nextDouble();				
+			}else {
+				double x = valorDiv/por;
+				System.out.printf("%.0f meses.",x);
+			}
+		}else {
+			double x = valorDiv/por;
+			System.out.printf("%.0f meses.",x);
 		}
-		double x = valorDiv/por;
-		System.out.println(x +" meses");
-		return sal;
 	}
 	public void setSal(double sal) {
 		this.sal = sal;
