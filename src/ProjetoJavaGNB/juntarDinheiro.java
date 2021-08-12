@@ -8,12 +8,12 @@ public class juntarDinheiro{
 
         Scanner menu = new Scanner (System.in);
         
-        double salario = 4700.25;
+        double salario = getSalario();
         double reserva = 0;
 
         while (true) {      
         	                
-     {
+    
         System.out.print("\t\tDESEJA GUARDAR QUANTO DO SEU SALÁRIO?\n\n");
         System.out.print("\t\t1. 5%\n");
         System.out.print("\t\t2. 10%\n");

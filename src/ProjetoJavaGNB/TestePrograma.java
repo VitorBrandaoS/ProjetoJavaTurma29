@@ -8,8 +8,10 @@ public class TestePrograma {
 		
 		Menu a = new Menu("",0);		
 		InvestClass classe = new InvestClass();
-		Scanner teclado = new Scanner(System.in);		
+		Scanner teclado = new Scanner(System.in);	
 		a.cadastro();
 		a.menu();
+		a.getSalario();
+		
 	}
 }

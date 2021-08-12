@@ -6,56 +6,7 @@ public class InvestClass {
 	Scanner teclado = new Scanner(System.in);
 	int escolha, escolha2, escolha3;
 	double valor;
-		
-	/*public void infoColchao(int v1, int v2) {
-		System.out.println("\n\t---Seu Colchão possui---");
-		double total = valor * v1;//3 - 12 -36
-		if(v1 == 3) {
-			System.out.println("Terceiro mês: R$" + total);
-		}
-		else if (v1 == 12) {
-			System.out.println("Um ano: R$" + total);
-		}
-		else if (v1 == 36) {
-			System.out.println("Três anos: R$" + total);
-		}
-		total = valor * v2;//6 - 24 - 60
-		if(v2 == 6) {		
-			System.out.println("Sexto mês: R$" + total);
-		}
-		else if(v2 == 24) {		
-			System.out.println("Dois anos: R$" + total);
-		}
-		else if(v2 == 60) {		
-			System.out.println("Cinco anos: R$" + total);
-		}
-	}
 	
-	public void menuColchao(int escolha) {
-		System.out.println("\n\t---Colchão---");
-		System.out.println("\nNão há rendimento aqui, apenas acumulo de valor depositado.");
-		System.out.println("\n\t---Colchão---");
-		System.out.println("\nDigite o valor que gostaria de depositar mensalmente: R$");
-		valor = teclado.nextDouble();
-		do {
-			System.out.println("Selecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
-			escolha3 = teclado.nextInt();
-			
-			switch(escolha3) {
-			case 1:
-				infoColchao(3, 6);
-				break;
-			case 2:					
-				infoColchao(12, 24);
-				break;
-			case 3:
-				infoColchao(36, 60);
-				break;
-			default: System.out.println("\nOps! Algo deu errado!\nPor favor tente novamente.");
-			}
-		}while(escolha3 < 1 || escolha3 > 3);
-		
-	}*/
 	
 	public void infoRendimento(int v1, int v2, double v3) {
 		System.out.println("\n\t---Seu Rendimento foi---");		
@@ -104,7 +55,7 @@ public class InvestClass {
 		System.out.println("\nDigite o valor que gostaria de depositar mensalmente: R$");
 		valor = teclado.nextDouble();
 		do {
-		System.out.println("Selecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
+		System.out.println("\nSelecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
 		escolha3 = teclado.nextInt();
 		
 		switch(escolha3) {
@@ -146,10 +97,10 @@ public class InvestClass {
 		}
 	}*/
 	
-	public void menuRendaFixa(int escolha) {
+	/*public void menuRendaFixa(int escolha) {
 		//Renda fixa
 		System.out.println("\n\t---Renda fixa---");
-		System.out.println("Selecione uma opção abaixo: \n1-Fazer estimativa com o que tenho.\n2-Quero criar uma Meta!");
+		System.out.println("\nSelecione uma opção abaixo: \n1-Fazer estimativa com o que tenho.\n2-Quero criar uma Meta!");
 		escolha2 = teclado.nextInt();
 		switch(escolha2) {
 		case 1 :
@@ -161,14 +112,14 @@ public class InvestClass {
 			break;			
 			default: System.out.println("\nOps! Algo deu errado!\nPor favor tente novamente."); 
 		}		
-	}
+	}*/
 	
 	public void subMenuRendaFixa1(int escolha) {
 		System.out.println("\n\t---Renda fixa---");
 		System.out.println("\nDigite o valor que gostaria de depositar mensalmente: R$");
 		valor = teclado.nextDouble();
 		do {
-		System.out.println("Selecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
+		System.out.println("\nSelecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
 		escolha3 = teclado.nextInt();
 		
 		switch(escolha3) {
@@ -197,31 +148,63 @@ public class InvestClass {
 		//Estimativa Renda Variavel
 		System.out.println("\n\t---Estimativa de Rendimento---");
 		System.out.println("De acordo com o valor inserido, será cauculado 10% de acrecimo mensal em cima do valor base, com adicional da taxa variavel.");
-		double total;
+		double valorB;		
+		double valorF = valor;
+				
 		if(v1 == 3) {
-			total = (((valor + valor * 0.1) * (0.04)) * v1);
-			System.out.println("Terceiro mês: R$" + total);			
+			valorB = valorF + (valorF * 0.04);		
+			for(int i = 0; i < (v1-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.04);	
+			}
+			//total = (((valor + valor * 0.1) * (0.04)) * v1);
+			System.out.printf("\nTerceiro mês: R$%.2f", valorB);			
 		}
 		else if (v1 == 12) {
-			total = (((valor + valor * 0.1) * (0.06)) * v1);
-			System.out.println("Um ano: R$" + total);			
+			valorB = valorF + (valorF * 0.06);		
+			for(int i = 0; i < (v1-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.06);	
+			}
+			//total = (((valor + valor * 0.1) * (0.06)) * v1);
+			System.out.printf("\nUm ano: R$%.2f", valorB);			
 		}
 		else if (v1 == 36) {
-			total = (((valor + valor * 0.1) * (0.1)) * v1);
-			System.out.println("Três anos: R$" + total);
+			valorB = valorF + (valorF * 0.1);		
+			for(int i = 0; i < (v1-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.1);	
+			}
+			//total = (((valor + valor * 0.1) * (0.1)) * v1);
+			System.out.printf("\nTrês anos: R$%.2f", valorB);
 		}
 		
 		if(v2 == 6) {
-			total = (((valor + valor * 0.1) * (0.05)) * v2);
-			System.out.println("Sexto mês: R$" + total);
+			valorB = valorF + (valorF * 0.05);		
+			for(int i = 0; i < (v2-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.05);	
+			}
+			//total = (((valor + valor * 0.1) * (0.05)) * v2);
+			System.out.printf("\nSexto mês: R$%.2f", valorB);
 		}
 		else if(v2 == 24) {		
-			total = (((valor + valor * 0.1) * (0.08)) * v2);
-			System.out.println("Dois anos: R$" + total);
+			valorB = valorF + (valorF * 0.08);		
+			for(int i = 0; i < (v2-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.08);	
+			}
+			//total = (((valor + valor * 0.1) * (0.08)) * v2);
+			System.out.printf("\nDois anos: R$%.2f", valorB);
 		}
 		else if(v2 == 60) {		
-			total = (((valor + valor * 0.1) * (0.12)) * v2);
-			System.out.println("Cinco anos: R$" + total);
+			valorB = valorF + (valorF * 0.12);		
+			for(int i = 0; i < (v2-1); i ++) {
+				valorB = ((valorF + (valorF * 0.1)) + valorB);
+				valorB = valorB + (valorB * 0.12);	
+			}
+			//total = (((valor + valor * 0.1) * (0.12)) * v2);
+			System.out.printf("\nCinco anos: R$%.2f", valorB);
 		}
 	}	
 	
@@ -230,7 +213,7 @@ public class InvestClass {
 		System.out.println("\nDigite o valor do investimento inicial: R$");
 		valor = teclado.nextDouble();
 		do {
-		System.out.println("Selecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
+		System.out.println("\nSelecione uma opção: \n1-Curto Prazo\n2-Médio Prazo\n3-Longo Prazo");
 		escolha3 = teclado.nextInt();
 		
 		switch(escolha3) {
@@ -248,14 +231,14 @@ public class InvestClass {
 		}while(escolha3 < 1 || escolha3 > 3);
 	}
 	
-	public void subMenuRendaVariavel2(int escolha) {
+	/*public void subMenuRendaVariavel2(int escolha) {
 		//Quero uma meta
 		System.out.println("\n\t---Renda Variavel---");
 		System.out.println("\nDefina um valor que gostaria de alcançar: R$");
 		valor = teclado.nextDouble();
-	}
+	}*/
 	
-	public void menuRendaVariavel(int escolha) {
+	/*public void menuRendaVariavel(int escolha) {
 		//Renda Variavel
 		System.out.println("\n\t---Renda Variavel---");
 		System.out.println("Selecione uma opção abaixo: \n1-Fazer estimativa com o que tenho.\n2-Quero criar uma Meta!");
@@ -269,7 +252,7 @@ public class InvestClass {
 			subMenuRendaVariavel2(escolha2);
 			break;
 		}
-	}
+	}*/
 	
 	public void investPrincipal(int v) {
 		System.out.println("\n\t--Menu de Escolha--");
