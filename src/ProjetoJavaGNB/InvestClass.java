@@ -50,8 +50,8 @@ public class InvestClass {
 	
 	public void subMenuPoupanca1(int escolha) {
 		//Estimativa com o que tenho
-		System.out.println("\n\t---Poupança---");
-		System.out.println("\n\t---Estimativa com o que tenho---");
+		System.out.println("\n--------------Poupança---------------");
+		System.out.println("\n-----Estimativa com o que tenho------");
 		System.out.println("\nDigite o valor que gostaria de depositar mensalmente: R$");
 		valor = teclado.nextDouble();
 		do {

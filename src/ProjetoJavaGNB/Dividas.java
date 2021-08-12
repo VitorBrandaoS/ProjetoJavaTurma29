@@ -16,6 +16,7 @@ public class Dividas {
 	String resposta;
 	
 	public void getValorDiv() {
+		System.out.println("\n-------------------------------\n");
 		System.out.println("Por favor, informe o valor de sua dívida: R$");
 		valorDiv=leia.nextDouble();		
 	}
@@ -36,7 +37,7 @@ public class Dividas {
 		if (por>porl)
 		{
 			int resp;
-			System.out.println("Você inseriu um valor maior do que 30% do seu salário! Tem certeza dessas descisão? \n1- Sim\n2- Não");
+			System.out.println("Você inseriu um valor maior do que 30% do seu salário! Tem certeza dessas decisão? \n1- Sim\n2- Não");
 			resp= leia.nextInt();
 			
 			if(resp == 2) 

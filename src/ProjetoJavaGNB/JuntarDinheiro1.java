@@ -10,6 +10,7 @@ public class JuntarDinheiro1 {
 	
 	public void dinheiro() {
 		boolean x = true;
+		System.out.println("\n-------------------------------\n");
         System.out.println("\nPor favor digite seu salário: R$");
         salario = menu.nextInt();
 		while (x) {

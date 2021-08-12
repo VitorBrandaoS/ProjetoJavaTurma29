@@ -28,9 +28,10 @@ public class Menu{
 	
 	public void menu() {
 		do {
-		System.out.println("\n\n\t------MENU------");
-		System.out.println("Olá "+ nome +"!Escolha uma opção:");		
-		System.out.println("\n1-Quitar dividas\n2-Aprender a organizar finanças\n3-Juntar dinheiro\n0-Encerrar programa");
+		System.out.println("\n\n--------------MENU-------------\n");
+		System.out.println("Olá "+ nome +"! Escolha uma opção:\n");
+		System.out.println("-------------------------------\n");
+		System.out.println("\n1-Quitar dividas\n2-Quero investir\n3-Juntar dinheiro\n0-Encerrar programa");
 		v = teclado.nextInt();
 		
 		switch(v) {
