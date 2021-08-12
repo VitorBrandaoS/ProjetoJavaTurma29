@@ -44,8 +44,22 @@ public class Dividas {
 			}
 			
 		}
-		double x = valorDiv/por;
-		System.out.printf("%.0f meses.",x);
+		 double x =valorDiv/por;
+		 x=(int) x;
+		double y =((x+1) *por)-valorDiv;
+		System.out.println(y);
+		if (y==0)
+		{
+		System.out.println("Para quitar sua divida de R$"+valorDiv +" Sera necessario \nJuntar o valor de R$"+por+" por ");
+		System.out.printf("%.0f  meses.",x);
+		}
+		else if(y>0.0) 
+		{
+			System.out.println("Para quitar sua divida de R$"+valorDiv +" Sera necessario \nJuntar o valor de R$"+por+" por ");
+			System.out.printf("%.0f  meses.",x++);
+			System.out.println("E ainda te sobra R$"+y);
+		}
+			
 	}
 	public void setSal(double sal) {
 		this.sal = sal;
