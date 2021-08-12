@@ -58,26 +58,42 @@ public class InvestClass {
 	}*/
 	
 	public void infoRendimento(int v1, int v2, double v3) {
-		System.out.println("\n\t---Seu Rendimento foi---");
-		double total = (valor + (valor * v3)) * v1;
+		System.out.println("\n\t---Seu Rendimento foi---");		
+		//double total = (valor + (valor * v3)) * v1;
+		double valorB;
+		double valorF = valor;
+		valorB = valorF + (valorF * v3);		
+		for(int i = 0; i < (v1-1); i ++) {
+			valorB = (valorF + valorB);
+			valorB = valorB + (valorB * v3);	
+		}		
+		
 		if(v1 == 3) {
-			System.out.println("Terceiro mês: R$" + total);
+			System.out.printf("\nTerceiro mês: R$%.2f", valorB);
 		}
 		else if (v1 == 12) {
-			System.out.println("Um ano: R$" + total);
+			System.out.printf("\nUm ano: R$%.2f", valorB);
 		}
 		else if (v1 == 36) {
-			System.out.println("Três anos: R$" + total);
+			System.out.printf("\nTrês anos: R$%.2f", valorB);
 		}
-		total = (valor + (valor * v3)) * v2;
+		//total = (valor + (valor * v3)) * v2;
+				
+		valorF = valor;
+		valorB = valorF + (valorF * v3);
+		for(int i = 0; i < (v2-1); i ++) {
+			valorB = (valorF + valorB);
+			valorB = valorB + (valorB * v3);
+		}
+		
 		if(v2 == 6) {		
-			System.out.println("Sexto mês: R$" + total);
+			System.out.printf("\nSexto mês: R$%.2f" , valorB);
 		}
 		else if(v2 == 24) {		
-			System.out.println("Dois anos: R$" + total);
+			System.out.printf("\nDois anos: R$%.2f" , valorB);
 		}
 		else if(v2 == 60) {		
-			System.out.println("Cinco anos: R$" + total);
+			System.out.printf("\nCinco anos: R$%.2f" , valorB);
 		}
 	}
 	
@@ -107,15 +123,15 @@ public class InvestClass {
 	
 	}
 	
-	public void subMenuPoupanca2(int escolha) {
+	/*public void subMenuPoupanca2(int escolha) {
 		//Quero uma meta
 		System.out.println("\n\t---Poupança---");
 		System.out.println("\n\t---Quero uma Meta!---");
 		System.out.println("\nDefina um valor que gostaria de alcançar: R$");
-		valor = teclado.nextDouble();	
-	}
+		valor = teclado.nextDouble();
+	}*/
 	
-	public void menuPoupanca(int escolha) {
+	/*public void menuPoupanca(int escolha) {
 		System.out.println("\n\t---Poupança---");
 		System.out.println("Selecione uma opção abaixo: \n1-Fazer estimativa com o que tenho.\n2-Quero criar uma Meta!");
 		escolha2 = teclado.nextInt();
@@ -124,11 +140,11 @@ public class InvestClass {
 				subMenuPoupanca1(escolha2);				
 			break;
 		case 2 : 
-				subMenuPoupanca2(escolha2);
+				
 			break;
 			default: System.out.println("\nOps! Algo deu errado!\nPor favor tente novamente.");
 		}
-	}
+	}*/
 	
 	public void menuRendaFixa(int escolha) {
 		//Renda fixa
@@ -261,13 +277,13 @@ public class InvestClass {
 		escolha = teclado.nextInt();
 		switch(escolha) {		
 		case 1:
-			menuPoupanca(escolha);
+			subMenuPoupanca1(escolha);
 			break;
 		case 2 :
-			menuRendaFixa(escolha);
+			subMenuRendaFixa1(escolha);
 			break;
 		case 3 :
-			menuRendaVariavel(escolha);				
+			subMenuRendaVariavel1(escolha);				
 			break;
 				default: System.out.println("\nOps! Algo deu errado!\nPor favor tente novamente.");
 		}

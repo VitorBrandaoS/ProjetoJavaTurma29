@@ -11,6 +11,5 @@ public class TestePrograma {
 		Scanner teclado = new Scanner(System.in);		
 		a.cadastro();
 		a.menu();
-			
 	}
 }
