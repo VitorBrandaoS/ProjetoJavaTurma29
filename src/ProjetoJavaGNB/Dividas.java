@@ -28,27 +28,24 @@ public class Dividas {
 		getValorDiv();
 		System.out.println("Por favor, informe seu salário");
 		double sala=leia.nextDouble();
-		System.out.println("Por favor, informe quanto você pode direcionar por mês para isto:");
+		System.out.println("Por favor, informe quanto você pode direcionar por mês \npara isto de no maximo 30% do seu salário total:");
 		double por =leia.nextDouble();
 		double porl = sala * 0.3;
 		if (por>porl)
 		{	
 			int resp;
-					
-			System.out.println("Você tem certeza que deseja direcionar todo este valor para quitar a dívida?");
-			resp = leia.nextInt();			
+			System.out.println("Você inseruiu um valor maior do que 30% \ntem certeza dessas descisão? \nAperte 1 para sim e 2 para não");
+			resp= leia.nextInt();			
 			
-			if(resposta == "não") {				
+			if(resp == 2) 
+			{				
 				System.out.println("Por favor, digite outra quantidade de seu salário direcionada para quitar a dívida");
 				por =leia.nextDouble();				
-			}else {
-				double x = valorDiv/por;
-				System.out.printf("%.0f meses.",x);
 			}
-		}else {
-			double x = valorDiv/por;
-			System.out.printf("%.0f meses.",x);
+			
 		}
+		double x = valorDiv/por;
+		System.out.printf("%.0f meses.",x);
 	}
 	public void setSal(double sal) {
 		this.sal = sal;

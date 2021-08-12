@@ -28,8 +28,8 @@ public class Teste {
 			//ir para opção quitar dividas;
 			//aqui fica a parte da branch dividas
 			
-			System.out.println("Por favor, informe o valor de sua dívida");
-			double div=leia.nextDouble();
+			/*System.out.println("Por favor, informe o valor de sua dívida");
+			double div=leia.nextDouble();*/
 			System.out.println("Por favor, informe seu salário");
 			double sal=leia.nextDouble();
 			System.out.println("Por favor, informe quanto você pode direcionar por mês para isto:");
